@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --color-surface: var(--surface);
+  --color-surface-card: var(--surface-card);
+  
+  --color-content: var(--content);
+  --color-content-muted: var(--content-muted);
+  --color-border: var(--border-color);
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Light Mode */
+    --primary: #163355; 
+    --secondary: #197ADC;
+
+    --surface: #f8fafc;
+    --surface-card: #ffffff;
+    
+    --content: #0f172a;
+    --content-muted: #64748b;
+    --border-color: #e2e8f0;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --primary: #3b82f6;
+    --secondary: #06b6d4;
+
+    --surface: #020617;
+    --surface-card: #0f172a;
+
+    --content: #f8fafc;
+    --content-muted: #94a3b8;
+    --border-color: #1e293b;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv05", "cv11";
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--content-muted);
+}
+
+@media print {
+  @page {
+    margin: 2cm;
+    size: auto;
+  }
+
+  aside, nav, button, .search-bar, input, .filter-bar, .actions-column, .bulk-actions-bar, .no-print {
+    display: none !important;
+  }
+
+  body, html {
+    background: white !important;
+    color: black !important;
+  }
+
+  .ml-0, .lg\:ml-64, .p-4, .lg\:p-8 {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .max-w-7xl {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .bg-surface-card {
+    border: none !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 12px 8px !important;
+    color: black !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  tr.bg-primary {
+    background-color: #163355 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
