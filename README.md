@@ -1,66 +1,78 @@
-# Fintrix Finance Dashboard
+# <p align="center">📈 Fintrix Dashboard</p>
 
-A modern, clean, and responsive personal finance dashboard built with React, Tailwind CSS, and Recharts. Designed for 2026 with a premium "Dark-First" aesthetic.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-blue?logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/Vite-6-646CFF?logo=vite" alt="Vite 6" />
+  <img src="https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css" alt="Tailwind 4" />
+  <img src="https://img.shields.io/badge/Vitest-Ready-729B1B?logo=vitest" alt="Vitest" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License" />
+</p>
+
+<p align="center">
+  <strong>A high-fidelity personal finance dashboard characterized by an enterprise-grade "High-Depth" minimalist aesthetic, built for performance and professional clarity.</strong>
+</p>
+
+---
+
+## ✨ Features
+
+Fintrix is designed to provide actionable financial insights with zero cognitive load.
+
+| Feature | Description |
+| :--- | :--- |
+| **📊 Real-time Analytics** | Dynamic summary cards for Balance, Income, and Expenses with trend indicators. |
+| **🎨 High-Depth UI** | Premium Indigo-First aesthetic with glassmorphism and subtle micro-animations. |
+| **⚙️ Smart Filtering** | Search and filter transactions by category, type, and date range in real-time. |
+| **🛠️ Admin Control** | Comprehensive Transaction Management (Add/Edit/Delete) with localized currency (Rs.). |
+| **🛡️ Resilience Layer** | Integrated Global Error Boundary and professional Empty State handling. |
+| **✅ Quality Gates** | Husky & lint-staged pre-commit hooks ensure stable, lint-clean code. |
 
 ## 🚀 Quick Start
 
-1.  **Clone the workspace** and navigate to `fintrix`.
-2.  **Install dependencies**:
-    ```bash
-    npm install
-    ```
-3.  **Run locally**:
-    ```bash
-    npm run dev
-    ```
+Ensure you have **Node.js 18+** installed.
 
-## ✨ Key Features
+```bash
+# 1. Clone & Navigate
+git clone https://github.com/ankit-0903/fintrix.git
+cd fintrix
 
-- **Dashboard Overview**: Summary cards for Total Balance, Monthly Income, and Expenses with percentage indicators.
-- **Interactive Visualizations**:
-  - **Balance Trend**: Area chart showing history over the last 6 months.
-  - **Spending Breakdown**: Donut chart showing categorical distribution.
-- **Transaction Management**: 
-  - Sortable and filterable table.
-  - Category-based rapid filtering.
-  - **Admin Role**: Full Add/Edit/Delete capabilities for transactions.
-- **Smart Insights**: Derived metrics showing Savings Rate, Top Category, and Year-End projections.
-- **Simulated Role-Based UI**: Instantly toggle between "Viewer" (Read-only) and "Admin" (Full access) via the header.
-- **Responsive Design**: Mobile-optimized layout with a translucent "Glassmorphism" effect.
+# 2. Install Dependencies
+npm install
+
+# 3. Launch Development Server
+npm run dev
+```
 
 ## 🛠️ Tech Stack
 
-- **Framework**: React 19 + Vite + TypeScript.
-- **Styling**: Tailwind CSS 4.0 (Modern CSS-first configuration).
-- **Animations**: Framer Motion for smooth transitions and hover effects.
-- **Icons**: Lucide React for premium, consistent iconography.
-- **Charts**: Recharts for performance-oriented, responsive data viz.
-- **State**: React Context API for lightweight, efficient state management.
-- **Storage**: Local Storage persistence for transactions and user preferences.
+- **Framework**: [React 19](https://react.dev/) + [Vite](https://vite.dev/)
+- **State Management**: [Context API](https://react.dev/learn/passing-data-deeply-with-context) (Lightweight & Efficient)
+- **Styling**: [Tailwind CSS 4.0](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Testing**: [Vitest](https://vitest.dev/)
+- **Automation**: [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/okonet/lint-staged)
 
-## 🎨 Design Philosophy
-
-- **Minimalism**: Reduced cognitive load by prioritizing the top 3 financial decisions.
-- **Visual Hierarchy**: Clear distinction between high-level KPIs and granular transaction details.
-- **Premium Aesthetics**: Using the "Fintrix Indigo" palette with deep slates and translucent blurs.
-
-## 📂 Project Structure
+## 📁 Repository Structure
 
 ```
 fintrix/
 ├── src/
-│   ├── components/
-│   │   └── layout/         # Sidebar, Header
-│   ├── context/            # DashboardContext (State)
-│   ├── data/               # Mock data & Types
-│   ├── features/
-│   │   ├── dashboard/      # Stats & Charts
-│   │   ├── transactions/   # Table & Forms
-│   │   └── insights/       # Smart Cards
-│   ├── pages/              # Dashboard entry page
-│   └── App.tsx             # Main layout & Backgrounds
-└── tailwind.config.ts      # (Using v4 CSS-first config)
+│   ├── components/common/   # Reusable UI (Cards, ErrorBoundary, EmptyState)
+│   ├── features/dashboard/  # Specialized Charts and Stats views
+│   ├── features/transactions/# Tables, Sortable Headers, and Forms
+│   ├── context/             # Unified State (DashboardContext)
+│   ├── hooks/               # Core Logic (Calculations, Filtering)
+│   └── constants/           # Branding (Currency, Locales, Colors)
+├── .husky/                  # Pre-commit quality hooks
+├── public/                  # Static assets (Favicons, Logo)
+└── vite.config.ts           # Vitest and Build configuration
 ```
 
 ---
-*Built for the Finance Dashboard UI Assignment - 2026.*
+
+## ⚖️ License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+<p align="center"><i>"Building the future of personal finance management."</i></p>
