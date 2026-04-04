@@ -65,7 +65,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => 
           <div className="flex items-center gap-3 mb-10 overflow-hidden pr-8">
             <div className="flex flex-col min-w-0">
               <h1 className="text-3xl font-black tracking-tight text-content truncate">Fintrix</h1>
-              <p className="text-[12px] font-bold italic text-content-muted tracking-widest truncate">Smart Financial Management</p>
+              <p className="text-[10px] font-bold italic text-content-muted tracking-widest truncate">Smart Financial Management</p>
             </div>
           </div>
 
@@ -86,7 +86,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => 
                     "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group outline-none text-left w-full",
                     isActive
                       ? "bg-primary text-white shadow-lg shadow-primary/20"
-                      : item.disabled 
+                      : item.disabled
                         ? "opacity-50 cursor-not-allowed text-content-muted"
                         : "text-content-muted hover:text-primary hover:bg-surface border border-transparent hover:border-border"
                   )}
