@@ -58,7 +58,7 @@ export const InsightsPanel: React.FC = () => {
               <span>Progress to goal</span>
               <span className="text-content">59%</span>
             </div>
-            <div className="h-1.5 bg-surface rounded-full overflow-hidden">
+            <div className="h-1.5 bg-surface border border-border/40 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${Math.min(savingsRate, 100)}%` }}
@@ -110,7 +110,7 @@ export const InsightsPanel: React.FC = () => {
               <span>Of total expenses</span>
               <span className="text-content">{topCategoryPercent}%</span>
             </div>
-            <div className="h-1.5 bg-surface rounded-full overflow-hidden">
+            <div className="h-1.5 bg-surface border border-border/40 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${topCategoryPercent}%` }}

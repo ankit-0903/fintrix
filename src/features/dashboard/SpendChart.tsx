@@ -80,11 +80,11 @@ export const SpendChart: React.FC = () => {
                 </Pie>
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    backgroundColor: 'var(--surface-card)',
                     backdropFilter: 'blur(8px)',
                     border: '1px solid var(--border-color)',
                     borderRadius: '12px',
-                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.2)'
                   }}
                   itemStyle={{ color: 'var(--content)', fontWeight: 'bold' }}
                   formatter={(value: string | number | readonly (string | number)[] | undefined) => {
