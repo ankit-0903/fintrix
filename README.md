@@ -159,7 +159,7 @@ Adhering to the assignment's goal for an "Intuitive" experience, Fintrix employs
 ### Testing Features
 - **Dashboard**: View summary cards, hover over chart tooltips, observe trend indicators
 - **Transactions**: Try search by description, filter by category/type, sort by columns
-- **Export**: Click the export button to download transactions as CSV or JSON
+- **Export**: Click the Excel or PDF button to download branded reports
 - **Dark Mode**: Toggle theme in header to see smooth transitions
 - **Responsiveness**: Resize browser window or use DevTools device emulation
 

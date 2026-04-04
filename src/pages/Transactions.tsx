@@ -7,12 +7,11 @@ import {
   Search,
   Filter,
   FileText,
-  Table as Sheet,
-  Download
+  Table as Sheet
 } from 'lucide-react';
 import { useDashboard } from '../context/DashboardContext';
 import { cn } from '../lib/utils';
-import { downloadCSV, downloadExcel, downloadPDF } from '../lib/exportUtils';
+import { downloadExcel, downloadPDF } from '../lib/exportUtils';
 import { useFilteredTransactions } from '../hooks/useFilteredTransactions';
 
 export const Transactions: React.FC = () => {
@@ -87,13 +86,7 @@ export const Transactions: React.FC = () => {
                 <span className="text-[10px] font-black uppercase text-content-muted tracking-widest">Export As</span>
               </div>
 
-              <button
-                onClick={() => downloadCSV(filteredTransactions, `Fintrix_Transactions_${new Date().toISOString().split('T')[0]}.csv`)}
-                className="flex items-center gap-2 px-4 py-2.5 bg-surface border border-border rounded-xl text-xs font-bold text-content hover:border-primary/30 hover:bg-primary/5 transition-all active:scale-95"
-              >
-                <Download className="w-4 h-4 text-blue-500" />
-                <span>CSV</span>
-              </button>
+
 
               <button
                 onClick={() => downloadExcel(filteredTransactions, user)}
