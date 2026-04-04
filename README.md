@@ -5,7 +5,6 @@
   <img src="https://img.shields.io/badge/Vite-6-646CFF?logo=vite" alt="Vite 6" />
   <img src="https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css" alt="Tailwind 4" />
   <img src="https://img.shields.io/badge/Vitest-Ready-729B1B?logo=vitest" alt="Vitest" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License" />
 </p>
 
 <p align="center">
