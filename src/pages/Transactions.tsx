@@ -12,7 +12,8 @@ import {
 } from 'lucide-react';
 import { useDashboard } from '../context/DashboardContext';
 import { cn } from '../lib/utils';
-import { downloadCSV, downloadExcel, triggerPrint } from '../lib/exportUtils';
+import { downloadCSV, downloadExcel, downloadPDF } from '../lib/exportUtils';
+import { useFilteredTransactions } from '../hooks/useFilteredTransactions';
 
 export const Transactions: React.FC = () => {
   const {
@@ -20,8 +21,21 @@ export const Transactions: React.FC = () => {
     searchQuery,
     setSearchQuery,
     isFilterBarOpen,
-    setIsFilterBarOpen
+    setIsFilterBarOpen,
+    user,
+    filter,
+    typeFilter,
+    monthFilter,
+    dateFilter,
+    sortField,
+    sortDirection
   } = useDashboard();
+
+  const filteredTransactions = useFilteredTransactions({
+    transactions,
+    filters: { filter, typeFilter, monthFilter, dateFilter, searchQuery },
+    sort: { sortField, sortDirection }
+  });
 
   return (
     <div className="flex flex-col min-h-screen ml-0 lg:ml-64 transition-all bg-surface overflow-x-hidden">
@@ -74,7 +88,7 @@ export const Transactions: React.FC = () => {
               </div>
 
               <button
-                onClick={() => downloadCSV(transactions, `Fintrix_Transactions_${new Date().toISOString().split('T')[0]}.csv`)}
+                onClick={() => downloadCSV(filteredTransactions, `Fintrix_Transactions_${new Date().toISOString().split('T')[0]}.csv`)}
                 className="flex items-center gap-2 px-4 py-2.5 bg-surface border border-border rounded-xl text-xs font-bold text-content hover:border-primary/30 hover:bg-primary/5 transition-all active:scale-95"
               >
                 <Download className="w-4 h-4 text-blue-500" />
@@ -82,7 +96,7 @@ export const Transactions: React.FC = () => {
               </button>
 
               <button
-                onClick={() => downloadExcel(transactions, `Fintrix_Transactions_${new Date().toISOString().split('T')[0]}`)}
+                onClick={() => downloadExcel(filteredTransactions, user)}
                 className="flex items-center gap-2 px-4 py-2.5 bg-surface border border-border rounded-xl text-xs font-bold text-content hover:border-primary/30 hover:bg-primary/5 transition-all active:scale-95"
               >
                 <Sheet className="w-4 h-4 text-emerald-500" />
@@ -90,7 +104,7 @@ export const Transactions: React.FC = () => {
               </button>
 
               <button
-                onClick={triggerPrint}
+                onClick={() => downloadPDF(filteredTransactions, user)}
                 className="flex items-center gap-2 px-4 py-2.5 bg-surface border border-border rounded-xl text-xs font-bold text-content hover:border-primary/30 hover:bg-primary/5 transition-all active:scale-95"
               >
                 <FileText className="w-4 h-4 text-rose-500" />

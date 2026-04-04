@@ -9,12 +9,14 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { format } from 'date-fns';
+import { useDashboard } from '../context/DashboardContext';
 
 interface DashboardProps {
   onNavigate: (page: 'dashboard' | 'transactions') => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
+  const { user } = useDashboard();
   const currentDate = useMemo(() => format(new Date(), 'EEEE, MMMM d, yyyy'), []);
 
   return (
@@ -26,7 +28,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
             <div>
               <h2 className="text-2xl font-bold tracking-tight text-content leading-tight">
-                Good Afternoon, <span className="text-primary font-black">Alex!</span>
+                Good Afternoon, <span className="text-primary font-black">{user.firstName}!</span>
               </h2>
               <p className="text-[11px] font-medium text-content-muted mt-1">
                 {currentDate}

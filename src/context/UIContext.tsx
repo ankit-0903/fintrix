@@ -31,7 +31,7 @@ export const UIProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   const [typeFilter, setTypeFilter] = useState<TransactionTypeFilter>('all');
   const [monthFilter, setMonthFilter] = useState<string>('All');
   const [dateFilter, setDateFilter] = useState<string>('');
-  const [isFilterBarOpen, setIsFilterBarOpen] = useState<boolean>(true);
+  const [isFilterBarOpen, setIsFilterBarOpen] = useState<boolean>(false);
 
   const resetFilters = useCallback(() => {
     setFilter('All');

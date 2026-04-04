@@ -29,7 +29,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, [theme]);
 
   const toggleTheme = () => {
+    document.body.classList.add('theme-switching');
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
+
+    setTimeout(() => {
+      document.body.classList.remove('theme-switching');
+    }, 50);
   };
 
   return (

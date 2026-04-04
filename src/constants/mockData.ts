@@ -3,23 +3,23 @@ import type { Transaction, ChartDataPoint } from '../types';
 
 export const generateMockTransactions = (): Transaction[] => {
   const transactions: Transaction[] = [
-    { id: '1', date: format(new Date(), 'yyyy-MM-dd'), amount: 4500, category: 'Salary', type: 'income', description: 'Monthly Salary - TechCorp' },
-    { id: '2', date: format(subDays(new Date(), 2), 'yyyy-MM-dd'), amount: 1200, category: 'Housing', type: 'expense', description: 'Monthly Rent' },
-    { id: '3', date: format(subDays(new Date(), 3), 'yyyy-MM-dd'), amount: 285, category: 'Food', type: 'expense', description: 'Sushi Night' },
-    { id: '4', date: format(subDays(new Date(), 5), 'yyyy-MM-dd'), amount: 95, category: 'Transit', type: 'expense', description: 'Gas Station' },
-    { id: '5', date: format(subDays(new Date(), 7), 'yyyy-MM-dd'), amount: 500, category: 'Freelance', type: 'income', description: 'Logo Design Project' },
-    { id: '6', date: format(subDays(new Date(), 10), 'yyyy-MM-dd'), amount: 150, category: 'Media', type: 'expense', description: 'Concert Tickets' },
-    { id: '7', date: format(subDays(new Date(), 12), 'yyyy-MM-dd'), amount: 430, category: 'Shopping', type: 'expense', description: 'New Headphones' },
-    { id: '8', date: format(subDays(new Date(), 15), 'yyyy-MM-dd'), amount: 300, category: 'Investment', type: 'income', description: 'Dividend Payout' }
+    { id: '1', date: format(new Date(), 'yyyy-MM-dd'), amount: 75000, category: 'Salary', type: 'income', description: 'Monthly Salary - Reliance Industries' },
+    { id: '2', date: format(subDays(new Date(), 2), 'yyyy-MM-dd'), amount: 22000, category: 'Housing', type: 'expense', description: '2BHK Apartment Rent' },
+    { id: '3', date: format(subDays(new Date(), 3), 'yyyy-MM-dd'), amount: 850, category: 'Food', type: 'expense', description: 'Zomato - Behrouz Biryani' },
+    { id: '4', date: format(subDays(new Date(), 5), 'yyyy-MM-dd'), amount: 3500, category: 'Transit', type: 'expense', description: 'Indian Oil - Petrol Refill' },
+    { id: '5', date: format(subDays(new Date(), 7), 'yyyy-MM-dd'), amount: 12000, category: 'Freelance', type: 'income', description: 'Web Dev Project - IndianSaaS' },
+    { id: '6', date: format(subDays(new Date(), 10), 'yyyy-MM-dd'), amount: 450, category: 'Media', type: 'expense', description: 'Netflix & Hotstar Subscription' },
+    { id: '7', date: format(subDays(new Date(), 12), 'yyyy-MM-dd'), amount: 2400, category: 'Shopping', type: 'expense', description: 'Myntra - Fashion Order' },
+    { id: '8', date: format(subDays(new Date(), 15), 'yyyy-MM-dd'), amount: 5000, category: 'Investment', type: 'income', description: 'SIP Dividend - HDFC Mutual Fund' }
   ];
 
   for (let i = 1; i < 6; i++) {
     const date = subMonths(new Date(), i);
-    transactions.push({ id: `old-${i}-1`, date: format(date, 'yyyy-MM-dd'), amount: 4500, category: 'Salary', type: 'income', description: 'Salary' });
-    transactions.push({ id: `old-${i}-2`, date: format(subDays(date, 5), 'yyyy-MM-dd'), amount: 1200, category: 'Housing', type: 'expense', description: 'Rent' });
-    transactions.push({ id: `old-${i}-3`, date: format(subDays(date, 10), 'yyyy-MM-dd'), amount: Math.floor(Math.random() * 200) + 600, category: 'Shopping', type: 'expense', description: 'Groceries & Retail' });
-    transactions.push({ id: `old-${i}-4`, date: format(subDays(date, 15), 'yyyy-MM-dd'), amount: Math.floor(Math.random() * 150) + 400, category: 'Media', type: 'expense', description: 'Entertainment' });
-    transactions.push({ id: `old-${i}-5`, date: format(subDays(date, 20), 'yyyy-MM-dd'), amount: 250, category: 'Health', type: 'expense', description: 'Pharmacy' });
+    transactions.push({ id: `old-${i}-1`, date: format(date, 'yyyy-MM-dd'), amount: 75000, category: 'Salary', type: 'income', description: 'Salary' });
+    transactions.push({ id: `old-${i}-2`, date: format(subDays(date, 5), 'yyyy-MM-dd'), amount: 22000, category: 'Housing', type: 'expense', description: 'Rent' });
+    transactions.push({ id: `old-${i}-3`, date: format(subDays(date, 10), 'yyyy-MM-dd'), amount: Math.floor(Math.random() * 2000) + 5000, category: 'Shopping', type: 'expense', description: 'BigBasket - Groceries' });
+    transactions.push({ id: `old-${i}-4`, date: format(subDays(date, 15), 'yyyy-MM-dd'), amount: Math.floor(Math.random() * 1500) + 1000, category: 'Media', type: 'expense', description: 'Entertainment & Recharges' });
+    transactions.push({ id: `old-${i}-5`, date: format(subDays(date, 20), 'yyyy-MM-dd'), amount: 1500, category: 'Health', type: 'expense', description: 'Apollo Pharmacy' });
   }
   return transactions;
 };

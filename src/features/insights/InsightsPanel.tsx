@@ -7,17 +7,17 @@ import { CURRENCY } from '../../constants/config';
 
 export const InsightsPanel: React.FC = () => {
   const { transactions } = useDashboard();
-  const { 
-    savingsRate, 
-    topCategory, 
-    topCategoryPercent, 
-    projectedEOY, 
-    projectedGrowth 
+  const {
+    savingsRate,
+    topCategory,
+    topCategoryPercent,
+    projectedEOY,
+    projectedGrowth
   } = useFinancialStats(transactions);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-      {/* 1. Savings Rate Card */}
+      {/* Savings Rate Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export const InsightsPanel: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* 2. Top Spend Card */}
+      {/* Top Spend Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export const InsightsPanel: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* 3. Year-End Projection Card */}
+      {/* Year-End Projection Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

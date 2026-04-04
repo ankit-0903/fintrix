@@ -13,7 +13,6 @@ describe('cn utility', () => {
   });
 
   it('handles tailwind conflicts with twMerge', () => {
-    // tailwind-merge should resolve 'px-2 px-4' to 'px-4'
     expect(cn('px-2', 'px-4')).toBe('px-4');
   });
 

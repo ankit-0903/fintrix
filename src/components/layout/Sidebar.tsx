@@ -31,12 +31,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => 
   return (
     <>
       {/* Mobile Toggle */}
-      <button
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-surface-card backdrop-blur-xl border border-border rounded-2xl shadow-xl transition-all active:scale-95"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X className="w-6 h-6 text-content" /> : <Menu className="w-6 h-6 text-content" />}
-      </button>
+      {!isOpen && (
+        <button
+          className="lg:hidden fixed top-4 left-4 z-50 p-3 bg-surface-card/80 backdrop-blur-xl border border-border rounded-2xl shadow-xl transition-all active:scale-95 animate-in fade-in zoom-in duration-300"
+          onClick={() => setIsOpen(true)}
+        >
+          <Menu className="w-6 h-6 text-content" />
+        </button>
+      )}
 
       {/* Sidebar Overlay */}
       {isOpen && (
@@ -51,8 +53,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => 
         "fixed inset-y-0 left-0 z-40 w-64 bg-surface-card border-r border-border transition-all duration-300 lg:translate-x-0 outline-none shadow-2xl lg:shadow-none",
         !isOpen && "-translate-x-full"
       )}>
-        <div className="flex flex-col h-full p-6">
-          <div className="flex items-center gap-3 mb-10 overflow-hidden">
+        <div className="flex flex-col h-full p-6 relative">
+          {/* Mobile Close Button */}
+          <button
+            className="lg:hidden absolute top-4 right-4 p-2 bg-surface border border-border rounded-xl text-content-muted hover:text-primary transition-all active:scale-95"
+            onClick={() => setIsOpen(false)}
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <div className="flex items-center gap-3 mb-10 overflow-hidden pr-8">
             <div className="flex flex-col min-w-0">
               <h1 className="text-3xl font-black tracking-tight text-content truncate">Fintrix</h1>
               <p className="text-[12px] font-bold italic text-content-muted tracking-widest truncate">Smart Financial Management</p>

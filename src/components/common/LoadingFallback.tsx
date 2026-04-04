@@ -9,7 +9,7 @@ export const LoadingFallback: React.FC = () => {
         <div className="absolute w-6 h-6 bg-primary/20 rounded-full animate-pulse" />
       </div>
       <div className="flex flex-col items-center">
-        <h3 className="text-xl font-bold text-content animate-pulse">Zorvyn Financials</h3>
+        <h3 className="text-xl font-bold text-content animate-pulse">Fintrix</h3>
         <p className="text-sm text-content-muted">Initializing dashboard...</p>
       </div>
     </div>

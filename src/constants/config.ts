@@ -15,8 +15,8 @@ export const CATEGORIES = [
 ];
 
 export const CHART_COLORS = {
-  primary: '#163355',
-  secondary: '#197ADC',
+  primary: '#197ADC',
+  secondary: '#06b6d4',
   accent: '#0ea5e9',
   emerald: '#10b981',
   amber: '#f59e0b',

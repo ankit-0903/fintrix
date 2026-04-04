@@ -30,7 +30,6 @@ export const Dropdown: React.FC<DropdownProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
@@ -41,10 +40,10 @@ export const Dropdown: React.FC<DropdownProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const getLabel = (opt: string | DropdownOption) => 
+  const getLabel = (opt: string | DropdownOption) =>
     typeof opt === 'string' ? opt : opt.label;
-  
-  const getValue = (opt: string | DropdownOption) => 
+
+  const getValue = (opt: string | DropdownOption) =>
     typeof opt === 'string' ? opt : opt.value;
 
   const selectedOption = options.find(opt => getValue(opt) === value);
@@ -56,14 +55,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
         <label className="text-[10px] font-bold text-content-muted uppercase tracking-tighter ml-1">
           {label}
         </label>
-        
+
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
             "flex items-center justify-between gap-3 px-4 py-2.5 bg-surface border rounded-xl transition-all outline-none min-w-[140px] cursor-pointer w-full",
-            isOpen 
-              ? "border-primary/50 ring-4 ring-primary/5 shadow-sm" 
+            isOpen
+              ? "border-primary/50 ring-4 ring-primary/5 shadow-sm"
               : "border-border hover:border-primary/30"
           )}
         >

@@ -1,5 +1,11 @@
 export type TransactionType = 'income' | 'expense';
 export type UserRole = 'viewer' | 'admin';
+
+export interface User {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
 export type SortField = 'date' | 'amount' | 'category' | 'description';
 export type SortDirection = 'asc' | 'desc';
 export type TransactionTypeFilter = 'all' | 'income' | 'expense';

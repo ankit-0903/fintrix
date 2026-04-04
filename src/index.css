@@ -17,12 +17,12 @@
 @layer base {
   :root {
     /* Light Mode */
-    --primary: #163355; 
-    --secondary: #197ADC;
+    --primary: #197ADC;
+    --secondary: #06b6d4;
 
     --surface: #f8fafc;
     --surface-card: #ffffff;
-    
+
     --content: #0f172a;
     --content-muted: #64748b;
     --border-color: #e2e8f0;
@@ -30,11 +30,11 @@
 
   .dark {
     /* Dark Mode */
-    --primary: #3b82f6;
+    --primary: #197ADC;
     --secondary: #06b6d4;
 
-    --surface: #020617;
-    --surface-card: #0f172a;
+    --surface: #0f172a;
+    --surface-card: #1e293b;
 
     --content: #f8fafc;
     --content-muted: #94a3b8;
@@ -47,6 +47,39 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "cv02", "cv05", "cv11";
+    transition-property: color, background-color, border-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  /* Keyboard Focus Indicators */
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline-offset: 2px;
+  }
+
+  /* Ensure smooth transitions for all color changes */
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, outline-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  /* Disable transitions for theme switching itself */
+  body.theme-switching *,
+  body.theme-switching *::before,
+  body.theme-switching *::after {
+    transition: none !important;
   }
 }
 

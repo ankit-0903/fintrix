@@ -5,7 +5,7 @@ import { User, Bell, Shield, Eye, Sun, Moon, Activity } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export const Header: React.FC = () => {
-  const { role, setRole } = useDashboard();
+  const { role, setRole, user } = useDashboard();
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -76,8 +76,8 @@ export const Header: React.FC = () => {
         {/* User Profile */}
         <div className="flex items-center gap-3 pl-4 border-l border-border">
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-bold text-content leading-tight">Alex Rivera</p>
-            <p className="text-[10px] font-bold text-content-muted uppercase tracking-widest">{role} Account</p>
+            <p className="text-sm font-bold text-content leading-tight">{user.firstName} {user.lastName}</p>
+    <p className="text-[10px] font-bold text-content-muted uppercase tracking-widest">{role} Account</p>
           </div>
           <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden hover:border-primary transition-colors cursor-pointer group">
             <User className="w-6 h-6 text-content-muted group-hover:text-primary transition-colors" />
